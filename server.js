@@ -7,6 +7,7 @@ import { bookRouter } from './src/route/bookRouter.js';
 import { auth } from './src/middlewares/auth.js';
 import { orderRoute } from './src/route/orderRoute.js';
 import { review } from './src/route/reviewRoute.js';
+import cors from 'cors'
 
 
 
