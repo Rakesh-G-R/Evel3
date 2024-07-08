@@ -4,7 +4,7 @@ import { addReview, deleteReview, getReview, updateReview } from "../controllers
 export const review=Router();
 
 
-review.get("/review",getReview);
+review.get("/review/:id",getReview);
 
 review.post("/add/review/:id",addReview);
 
