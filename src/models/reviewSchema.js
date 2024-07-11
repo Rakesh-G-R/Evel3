@@ -9,7 +9,7 @@ const review=new Schema({
         type:String
     },
     bookId:{
-        type:Schema.Types.ObjectId
+        type:Schema.Types.ObjectId;
     },
     userId:{
         type:Number
