@@ -11,7 +11,7 @@ export const getBook=async(req,res)=>{
 }
 
 export const addBook=async(req,res)=>{
-    try{
+    try{A
       const newBook=new Book(req.body);
       newBook.save();
       return res.status(201).send('Book created successfully')

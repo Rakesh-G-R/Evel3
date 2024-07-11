@@ -5,7 +5,7 @@ import { Review } from "../models/reviewSchema.js";
 export const getReview=async(req,res)=>{
     const{id}=req.body;
     try{
-       const books=await Review.findone({_id:id});
+       const books=await Review.findone({bookId:id});
       return res.status(200).send(books);
     }catch(err){
         console.log(err);
