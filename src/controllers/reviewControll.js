@@ -3,7 +3,7 @@ import { Review } from "../models/reviewSchema.js";
 
 
 export const getReview=async(req,res)=>{
-    const{id}=req.body;
+    const{id}=params;
     try{
        const books=await Review.find({bookId:id});
       return res.status(200).send(books);
