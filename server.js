@@ -20,9 +20,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 app.use(express.json());
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : '*', 
-}));
+app.use(cors());
 
 // Routes
 app.use('', userRoute);
