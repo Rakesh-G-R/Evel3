@@ -3,23 +3,23 @@ import { addBook, deleteBook, getBook, updateBook } from "../controllers/bookCon
 import { role } from "../middlewares/role.js";
 import fs from 'node:fs';
 import { join } from "node:path";
+import { io } from '../../server.js';
 import multer from "multer";
-import { io } from '../server.js';
+
+export const bookRouter=Router()
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads');
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    }
+  destination: function (req, file, cb) {
+      cb(null, 'uploads');
+  },
+  filename: function (req, file, cb) {
+      cb(null, file.originalname);
+  }
 });
 
 const upload = multer({ storage: storage });
 
-export const bookRouter = Router();
-
-bookRouter.get("/book", role(['user', 'Admin']), getBook);
+bookRouter.get("/book", role(['user', 'Admin']),getBook);
 bookRouter.post("/add/book", role(['Admin']), addBook);
 bookRouter.patch("/update/book/:id", role(['Admin']), updateBook);
 bookRouter.delete("/delete/book/:id", role(['Admin']), deleteBook);
