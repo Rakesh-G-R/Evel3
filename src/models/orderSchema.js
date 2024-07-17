@@ -21,6 +21,10 @@ import { sequelize } from "../config/sqlDB.js"
         default:1,
         require:true
     },
+    status:{
+        type:DataTypes.STRING,
+        enum:['booked','inprocess','delivered']
+    }
 },{
     tableName:"orders"
 })

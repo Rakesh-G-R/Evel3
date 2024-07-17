@@ -2,6 +2,15 @@ import { User } from "../models/userSchema.js"
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+ 
+export const getUsers=async(req,res)=>{
+   try{
+     const users=User.findAll();
+     return  res.send(users);
+   }catch(err){
+    console.log(err);
+   }
+}
 
 export const userRegister=async(req,res)=>{
    const{userName,email,password,role}=req.body;
