@@ -8,7 +8,7 @@ import { bookRouter} from './src/route/bookRouter.js';
 import { review } from './src/route/reviewRoute.js';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import { logger } from './src/logs/logger.js';
+//import { logger } from './src/logs/logger.js';
 import { connecttomdb } from './src/config/monfoDB.js';
 import cors from 'cors';
 
@@ -33,8 +33,8 @@ app.use('', auth, review);
 const port = process.env.PORT || 9090;
 const uri = process.env.URI || null;
 
-logger.error('this is error log');
-logger.info('this is info log');
+//logger.error('this is error log');
+//logger.info('this is info log');
 
 io.on('connection', (socket) => {
   console.log('new user connected');
